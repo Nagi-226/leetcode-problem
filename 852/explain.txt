@@ -1,0 +1,36 @@
+1.初始化：
+
+int left = 0;
+int right = arr.size() - 1;
+
+2.计算中间点：
+
+int mid = left + (right - left) / 2;
+
+3.二分查找：
+
+if (arr[mid] < arr[mid + 1]) 
+{
+    left = mid + 1;
+} 
+else 
+{
+    right = mid;
+}
+
+如果 arr[mid] < arr[mid + 1]，峰值在右侧，更新 left = mid + 1。
+否则，峰值在左侧或就是 mid 位置，更新 right = mid。
+
+4.返回结果：
+
+return left;
+
+
+二分查找中间点的计算：
+
+mid=left+(right−left)/2
+
+目的在于：
+
+1.确定相对于 left 的中间位置。
+2.避免直接相加 left 和 right 可能导致的溢出问题。
